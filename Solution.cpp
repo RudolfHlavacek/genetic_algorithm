@@ -49,7 +49,7 @@ double Solution::bitsToDouble() const
     {
         dec += pow(2, i) * m_bits[i];
     }
-    return dec*prec;
+    return dec*prec + m_low;
 }
 
 // f(x) = x + 2 * sin(x)
@@ -57,7 +57,7 @@ double Solution::bitsToDouble() const
 double Solution::fitness() const
 {
     double x = bitsToDouble();
-    return x + 2 * sin(x);
+    return x + 3 * sin(x);
 }
 
 std::vector<Solution> Solution::singlePointCrossover(Solution other,
